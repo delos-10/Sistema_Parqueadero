@@ -1,4 +1,4 @@
-/* ============================================================
+/* 
    STORAGE.JS — Capa de persistencia con localStorage
    Archivo: src/utils/storage.js
    
@@ -12,7 +12,7 @@
    - pz_contadorRes   → número
    - pz_turnos        → [ { operador, nombre, inicio(ISO), fin(ISO), horas } ]
    - pz_turnoActivo   → { usuario, nombre, inicio(ISO) } | null
-============================================================ */
+ */
 
 const PZ = {
 

@@ -1,7 +1,7 @@
-/* ============================================================
+/* 
    HELPERS.JS — Funciones de utilidad
    Archivo: src/utils/helpers.js
-============================================================ */
+ */
 
 /* ---- Verificar permiso por rol ---- */
 function tienePermiso(rolesPermitidos) {
