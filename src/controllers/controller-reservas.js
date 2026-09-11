@@ -268,6 +268,11 @@ function guardarEdicionReserva() {
     msg("⚠️ Completa todos los campos.", "warn", "editResMsg");
     return;
   }
+  const regexPlaca = /^[A-Z]{3}[0-9]{3}$|^[A-Z]{3}[0-9]{2}[A-Z]$/;
+  if (!regexPlaca.test(placa)) {
+    msg('⚠️ Formato de placa inválido. Usa letras y números (ej: ABC123).', 'warn', 'editResMsg');
+    return;
+  }
   if (horaEntrada >= horaSalida) {
     msg(
       "⚠️ La hora de salida debe ser posterior a la de entrada.",

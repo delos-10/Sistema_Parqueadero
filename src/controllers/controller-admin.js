@@ -56,6 +56,10 @@ function configurarCapacidad() {
     );
     return;
   }
+  if (nueva < ocupados.size) {
+    msg(`⚠️ No puedes reducir la capacidad a <b>${nueva}</b> puestos porque hay <b>${ocupados.size}</b> vehículos dentro del parqueadero.`, 'warn', 'panelAdmResult');
+    return;
+  }
   CAPACIDAD = nueva;
   PZ.guardarConfig();
   const fc = document.getElementById("footerCapacidad");

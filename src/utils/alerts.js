@@ -1,7 +1,7 @@
-/* ============================================================
+/* 
    ALERTS.JS — Renderizador genérico de mensajes en pantalla
    Archivo: src/utils/alerts.js
-============================================================ */
+*/
 
 /* ---- Mostrar mensaje dentro de cualquier contenedor de resultado ---- */
 function msg(texto, tipo = 'info', contenedor = 'resultado') {
