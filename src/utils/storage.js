@@ -52,6 +52,7 @@ const PZ = {
     if (!raw) return;
     const data = JSON.parse(raw);
     vehiculos = {};
+    ocupados = new Set();
     Object.entries(data).forEach(([placa, v]) => {
       vehiculos[placa] = {
         entrada:   new Date(v.entrada),

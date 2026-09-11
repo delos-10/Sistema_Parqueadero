@@ -120,6 +120,7 @@ function iniciarSistema() {
   aplicarPermisosRol(sesionActual.rol);
   initApp();
   renderMisReservas();
+  renderHistorialUsuario();
   renderReservasOperador();
 }
 

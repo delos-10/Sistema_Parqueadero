@@ -10,9 +10,10 @@ Aplicación web para la gestión de parqueaderos. Permite administrar espacios d
 - Kleider López
 - Bryan Gómez
 
+
 ## Sitio desplegado
 
-[Pendiente: agregar aquí el enlace de GitHub Pages una vez esté desplegado]
+[Ver sitio en vivo](https://delos-10.github.io/Sistema_Parqueadero/)
 
 ## Cómo instalar y ejecutar localmente
 
