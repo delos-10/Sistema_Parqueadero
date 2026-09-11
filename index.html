@@ -9,9 +9,7 @@
 </head>
 <body>
 
-<!-- ===================================================
-     PANTALLA DE LOGIN
-=================================================== -->
+<!-- Pantalla de autenticacion y seleccion de rol -->
 <div class="login-overlay" id="loginOverlay">
   <div class="login-bg-shapes">
     <div class="shape s1"></div>
@@ -21,14 +19,14 @@
   </div>
 
   <div class="login-card" id="loginCard">
-    <!-- Logo -->
+    <!-- Logotipo y titulo del sistema -->
     <div class="login-logo">
       <div class="login-logo-icon">🅿️</div>
       <h1>PARK<span>ZONE</span></h1>
       <p>SISTEMA DE GESTIÓN DE PARQUEADERO</p>
     </div>
 
-    <!-- Selector de tipo de sesión -->
+    <!-- Selector de tipo de sesion para definir permisos (usuario, operador o administrador) -->
     <div class="session-selector">
       <p class="session-label">Selecciona tu tipo de sesión</p>
       <div class="session-btns">
@@ -47,7 +45,7 @@
       </div>
     </div>
 
-    <!-- Formulario -->
+    <!-- Formulario de ingreso con campos para usuario y contrasena -->
     <div class="login-form">
       <div class="login-field">
         <label class="login-lbl" for="loginUser">Usuario</label>
@@ -71,7 +69,7 @@
       </button>
     </div>
 
-    <!-- Info de cuentas demo -->
+    <!-- Credenciales de prueba para demostracion del sistema -->
     <div class="login-demo">
       <details>
         <summary>Ver cuentas de prueba</summary>
@@ -86,12 +84,10 @@
   </div>
 </div>
 
-<!-- ===================================================
-     SISTEMA PRINCIPAL (oculto hasta login)
-=================================================== -->
+<!-- Interfaz del sistema principal visible tras autenticacion -->
 <div id="sistemaApp" style="display:none">
 
-<!-- HEADER -->
+<!-- Cabecera principal con indicador de rol, fecha, reloj y boton de cierre de sesion -->
 <header class="header">
   <div class="header-brand">
     <div class="header-icon">🅿️</div>
@@ -113,15 +109,13 @@
   </div>
 </header>
 
-<!-- ===== CONTENIDO PRINCIPAL ===== -->
+<!-- Contenedor general del contenido de la aplicacion -->
 <div class="wrapper">
 
-  <!-- COLUMNA IZQUIERDA -->
+  <!-- Columna izquierda: modulos operativos segun el rol autenticado -->
   <div class="col-left">
 
-    <!-- ============================================
-         USUARIO — Hacer una reserva
-    ============================================= -->
+    <!-- Modulo de usuario: Formulario para registrar una nueva reserva de espacio -->
     <div class="card" id="cardReservaUsuario" style="display:none">
       <div class="card-header ch-azul">
         <span class="hicon">📅</span> Reservar un Espacio
@@ -188,9 +182,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         USUARIO — Consultar mi vehículo en tiempo real
-    ============================================= -->
+    <!-- Modulo de usuario: Consulta del estado del vehiculo en tiempo real -->
     <div class="card" id="cardMiVehiculo" style="display:none">
       <div class="card-header ch-verde">
         <span class="hicon">🟢</span> Mi Vehículo en Tiempo Real
@@ -212,9 +204,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         USUARIO — Mis reservas activas y pendientes
-    ============================================= -->
+    <!-- Modulo de usuario: Listado de reservas activas y pendientes -->
     <div class="card" id="cardMisReservas" style="display:none">
       <div class="card-header ch-naranja">
         <span class="hicon">📅</span> Mis Reservas Activas
@@ -226,9 +216,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         USUARIO — Historial de reservas (finalizadas / canceladas)
-    ============================================= -->
+    <!-- Modulo de usuario: Historial de reservas finalizadas y canceladas -->
     <div class="card" id="cardHistorialUsuario" style="display:none">
       <div class="card-header" style="background:#EDE7F6;color:#4A148C;border-color:#D1C4E9">
         <span class="hicon">📜</span> Historial de Mis Reservas
@@ -240,9 +228,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         OPERADOR/ADMIN — Registro de vehículos
-    ============================================= -->
+    <!-- Modulo de operador y administrador: Formulario para registro de entradas, salidas y consulta -->
     <div class="card" id="cardRegistroVehiculos" style="display:none">
       <div class="card-header ch-azul">
         <span class="hicon">🚗</span> Registro de Vehículos
@@ -266,9 +252,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         OPERADOR/ADMIN — Vehículos activos
-    ============================================= -->
+    <!-- Modulo de operador y administrador: Listado de vehiculos actualmente dentro del parqueadero -->
     <div class="card" id="cardVehiculosActivos" style="display:none">
       <div class="card-header ch-verde">
         <span class="hicon">🟢</span> Vehículos Actualmente Dentro
@@ -280,9 +264,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         OPERADOR/ADMIN — Reservas actuales
-    ============================================= -->
+    <!-- Modulo de operador y administrador: Visualizacion y gestion de reservas pendientes y activas -->
     <div class="card" id="cardReservasActuales" style="display:none">
       <div class="card-header ch-naranja">
         <span class="hicon">📅</span> Reservas Actuales
@@ -294,9 +276,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         OPERADOR — Panel del Operador
-    ============================================= -->
+    <!-- Modulo de operador: Acciones rapidas de turno, reportes y busqueda de vehiculos -->
     <div class="card panel-operador" id="panelOperador" style="display:none">
       <div class="card-header ch-naranja">
         <span class="hicon">🛂</span> Panel del Operador
@@ -315,9 +295,7 @@
       </div>
     </div>
 
-    <!-- ============================================
-         ADMIN — Panel del Administrador
-    ============================================= -->
+    <!-- Modulo de administrador: Configuracion de tarifas, capacidad, informes consolidados y nomina -->
     <div class="card panel-admin" id="panelAdmin" style="display:none">
       <div class="card-header" style="background:#F3E5F5;color:#6A1B9A;border-color:#E1BEE7">
         <span class="hicon">👑</span> Panel del Administrador
@@ -340,10 +318,10 @@
 
   </div>
 
-  <!-- COLUMNA DERECHA -->
+  <!-- Columna derecha: metricas de ocupacion, mapa de puestos e historial de movimientos -->
   <div class="col-right">
 
-    <!-- Estadísticas de ocupación -->
+    <!-- Metricas resumidas: puestos ocupados, disponibles, ingresos y total atendido en el dia -->
     <div class="stats-row">
       <div class="stat stat-ocupados">
         <div class="stat-icon">🔴</div>
@@ -367,7 +345,7 @@
       </div>
     </div>
 
-    <!-- Barra de ocupación -->
+    <!-- Barra de progreso visual para el porcentaje de ocupacion -->
     <div class="card">
       <div class="card-header ch-azul">
         <span class="hicon">📊</span> Ocupación del Parqueadero
@@ -385,7 +363,7 @@
       </div>
     </div>
 
-    <!-- Mapa de puestos -->
+    <!-- Mapa interactivo de puestos del parqueadero con estados libre y ocupado -->
     <div class="card">
       <div class="card-header ch-verde">
         <span class="hicon">🗺️</span> Mapa de Puestos
@@ -399,7 +377,7 @@
       </div>
     </div>
 
-    <!-- Historial de movimientos (operador/admin) -->
+    <!-- Historial cronologico de entradas y salidas de vehiculos -->
     <div class="card" id="cardHistorial" style="display:none">
       <div class="card-header ch-naranja">
         <span class="hicon">📜</span> Historial de Movimientos
@@ -421,10 +399,10 @@
   Sesión: <span id="footerSesion">—</span>
 </div>
 
-</div><!-- fin sistemaApp -->
+</div><!-- Cierre del contenedor principal del sistema -->
 
 
-<!-- ===== MODAL COBRO DE SALIDA ===== -->
+<!-- Modal de comprobante y cobro de salida de vehiculo -->
 <div class="overlay" id="overlay">
   <div class="modal">
     <div class="modal-head">
@@ -439,7 +417,7 @@
   </div>
 </div>
 
-<!-- ===== MODAL CONFIGURAR TARIFA (admin) ===== -->
+<!-- Modal para modificacion de tarifas por minuto y cobro minimo -->
 <div class="overlay" id="overlayTarifa">
   <div class="modal modal-sm">
     <div class="modal-head" style="background:linear-gradient(135deg,#4A148C,#7B1FA2)">
@@ -474,7 +452,7 @@
   </div>
 </div>
 
-<!-- ===== MODAL DASHBOARD (admin) ===== -->
+<!-- Modal de dashboard general para administracion -->
 <div class="overlay" id="overlayDashboard">
   <div class="modal" style="width:min(620px,94vw)">
     <div class="modal-head" style="background:linear-gradient(135deg,#4A148C,#7B1FA2)">
@@ -489,7 +467,7 @@
   </div>
 </div>
 
-<!-- ===== MODAL NÓMINA (admin) ===== -->
+<!-- Modal de gestion y calculo de nomina para operadores -->
 <div class="overlay" id="overlayNomina">
   <div class="modal" style="width:min(560px,94vw)">
     <div class="modal-head" style="background:linear-gradient(135deg,#4A148C,#7B1FA2)">
@@ -518,7 +496,7 @@
   </div>
 </div>
 
-<!-- ===== MODAL EDITAR RESERVA (usuario) ===== -->
+<!-- Modal para edicion de reservas activas o pendientes por parte del usuario -->
 <div class="overlay" id="overlayEditReserva">
   <div class="modal modal-sm" style="width:min(480px,94vw)">
     <div class="modal-head" style="background:linear-gradient(135deg,#0D47A1,#1565C0)">
@@ -588,10 +566,10 @@
   </div>
 </div>
 
-<!-- TOOLTIP TIEMPO EN MAPA -->
+<!-- Contenedor para tooltip de informacion de tiempo sobre cada puesto del mapa -->
 <div class="spot-tooltip" id="spotTooltip"></div>
 
-<!-- ===== SCRIPTS (orden importante: utils → models → controllers) ===== -->
+<!-- Scripts de la aplicacion cargados en orden secuencial: utilidades, modelos de datos y controladores -->
 <script src="src/utils/helpers.js"></script>
 <script src="src/utils/storage.js"></script>
 <script src="src/utils/alerts.js"></script>
